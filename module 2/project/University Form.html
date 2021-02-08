@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Form</title>
+
+    <style>
+        body{
+            width: 800px;
+            margin: auto;
+        }
+        form{
+            display: grid;
+            grid-template-areas: 
+            'name email'
+            'like interest'
+            'comments comments'
+            'submit reset';
+
+            grid-template-columns: 1fr 1fr;
+            column-gap: 10px;
+            row-gap: 15px;
+            grid-template-rows: auto;
+            width: 100%;
+        }
+
+        .nameInput{
+            grid-area: name;
+        }
+
+        .emailInput{
+            grid-area: email;
+        }
+
+        .likeInput{
+            display: grid;
+            grid-area: like;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .likeTitle{
+            grid-column: span 2;
+        }
+
+        .interestInput{
+            display: grid;
+            grid-area: interest;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .interestTitle{
+            grid-column: span 2;
+        }
+
+        textarea{
+            grid-area: comments;
+        }
+
+        .submitInput{
+            grid-area: submit;
+            width: 50%;
+            justify-self: center;
+        }
+
+        .resetInput{
+            grid-area: reset;
+            width: 50%;
+            justify-self: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>College Feedback Form</h1>
+    <form action="http://www.deitel.com">
+        <span class="nameInput">
+            <label for="feedbackName">Name:</label>
+            <input type="text" id="feedbackName" name="name" placeholder="Name">
+        </span>
+
+        <span class="emailInput">
+            <label for="feedbackEmail">Email:</label>
+            <input type="email" id="feedbackEmail" name="email" placeholder="Email">
+        </span>
+
+        <div class="likeInput">
+            <span class="likeTitle">What did you like about the college?</span>
+            <span>
+                <input type="checkbox" id="feedbackCampus" name="campus">
+                <label for="feedbackCampus">Campus</label>
+            </span>
+            <span>
+                <input type="checkbox" id="feedbackStudents" name="students">
+                <label for="feedbackStudents">Students</label>
+            </span>
+            <span>
+                <input type="checkbox" id="feedbackLocation" name="location">
+                <label for="feedbackLocation">Location</label>
+            </span>
+            <span>
+                <input type="checkbox" id="feedbackAtmosphere" name="atmosphere">
+                <label for="feedbackAtmosphere">Atmosphere</label>
+            </span>
+            <span>
+                <input type="checkbox" id="feedbackDorms" name="dorms">
+                <label for="feedbackDorms">Dorm Rooms</label>
+            </span>
+            <span>
+                <input type="checkbox" id="feedbackSports" name="sports">
+                <label for="feedbackSports">Sports</label>
+            </span>
+        </div>
+
+        <div class="interestInput">
+            <span class="interestTitle">How did you become interested in the college?</span>
+            <span>
+                <input type="radio" id="feedbackFriends" name="interest">
+                <label for="feedbackFriends">Friends</label>
+            </span>
+            <span>
+                <input type="radio" id="feedbackTV" name="interest">
+                <label for="feedbackTV">Television</label>
+            </span>
+            <span>
+                <input type="radio" id="feedbackInternet" name="interest">
+                <label for="feedbackInternet">Internet</label>
+            </span>
+            <span>
+                <input type="radio" id="feedbackOther" name="interest">
+                <label for="feedbackOther">Other</label>
+            </span>
+        </div>
+
+        <textarea name="comments" id="feedbackComments" cols="30" rows="10" placeholder="Additional Comments"></textarea>
+
+        <input class="submitInput" type="submit">
+        <input class="resetInput" type="reset">
+    </form>
+</body>
+</html>
