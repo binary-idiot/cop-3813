@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sections</title>
+
+	<style>
+		main{
+			margin: auto;
+			width: 80%;
+			line-height: 125%;
+		}
+		h2,h3{
+			margin-bottom: 5px;
+		}
+		figure{
+			margin: 0;
+			margin-bottom: 10px;
+			width: 100%
+		}
+		img{
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			padding: 10px;;
+		}
+		table{
+			border-collapse: collapse;
+			
+		}
+		tr:first-child{
+			background-color: darkgray;
+		}
+		tr{
+			background-color: lightgray;
+		}
+		th{
+			padding: 20px;
+		}
+		td{
+			padding: 5px;
+		}
+		figcaption b{
+			padding-right: 5px;
+			margin-right: 5px;
+			border-right: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<section>
+			<p>
+				<h2> 3.2.1 input Type color</h2>	
+				The <b>color input type</b> (Fig. 3.1; lines 20&ndash;21) enables the user to enter a color. 
+				Opera displays a <i>color picker</i> control that shows the default color (black) with a down arrow that, when clicked, shows a drop-down with 20 basic colors (Fig. 3.2). 
+				The user can select a color or click the <i>Other...</i> button to select from additional basic colors or create a custom color. 
+				At the time of this writing, most browsers render the color input type as a text field in which the user can enter a hexidecimal code. 
+			</p>
+			<figure>
+				<hr>
+				<img src="./imgs/fig 3.2.png" alt="Color picker">
+				<hr>
+				<figcaption><b>Fig. 3.2</b> Inputting a color in Opera with a color picker control.</figcaption>
+			</figure>
+		</section>
+
+		<section>
+			<p>
+				<h3>autofocus <i>Attribute</i></h3>
+				The <b>autofocus attribute</b> (Fig. 3.1; line 20)&mdash;an optional attribute that can be used in only one input element on a form&mdash;automatically gives the focus to the input element, 
+				allowing the user to begin typing in that element immediat. Figure 3.3 shows autofocus on the color element&mdash;the first input element in our form&mdash;as rendered in Chrome. 
+				You do not need to include autofocus in your forms.
+			</p>
+			
+			<figure>
+				<hr>
+				<img src="./imgs/Fig 3.3.png" alt="HTML5 Inputs with autofocus">
+				<hr>
+				<figcaption><b>Fig. 3.3</b> Autofocus in the color input element using Chrome</figcaption>
+			</figure>
+
+			
+		</section>
+
+		<section>
+			<p>
+				<h3><i>Validation</i></h3>
+				Traditionally it's been difficult to validate user input, such as ensuring that an e-mail address, URL, date or time is entered in the proper format. 
+				The new HTML 5 input types are <i>self validating</i> on the client side, eliminating the need to add complicated JavaScript code to your web pages to validate user input, 
+				reducing the amount of invalid data submitted and consequently reducing Internet traffic between the server and the client to correct invalid input. 
+				<br>
+				When a user enters data into a form then submits the form (in this example, by clicking the <b>Submit</b> button), the browser immediately checks the self-validating elements to ensure that the data is correct. 
+				For example, if a user enters an incorrect hexadecimal color value when using a browser that renders the color elements as a text field (e.g., Chrome), 
+				a callout pointing to the element will appear, indicating that an invalid value was entered (Fig. 3.4). 
+				Figure 3.5 lists each of the new HTML5 input types and provides examples of the proper formats required for each type of data to be valid. 
+			</p>
+
+			<figure>
+				<hr>
+				<img src="./imgs/Fig 3.4.png" alt="Input validation">
+				<hr>
+				<figcaption><b>Fig. 3.4</b> Validating a color input in Chrome.</figcaption>
+			</figure>
+			
+			<figure>
+				<table>
+					<tr>
+						<th>input type</th>
+						<th>Format</th>
+					</tr>
+					<tr>
+						<td>color</td>
+						<td>Hexadecimal code</td>
+					</tr>
+					<tr>
+						<td>date</td>
+						<td>yyyy-mm-dd</td>
+					</tr>
+					<tr>
+						<td>datetime</td>
+						<td>yyyy-mm-dd</td>
+					</tr>
+					<tr>
+						<td>datetime-local</td>
+						<td>yyyy-mm-ddThh:mm+ff:gg</td>
+					</tr>
+					<tr>
+						<td>month</td>
+						<td>yyyy-mm</td>
+					</tr>
+					<tr>
+						<td>number</td>
+						<td>Any numerical value.</td>
+					</tr>
+					<tr>
+						<td>email</td>
+						<td>name@domain.com</td>
+					</tr>
+					<tr>
+						<td>url</td>
+						<td>http://www.domainname.com</td>
+					</tr>
+					<tr>
+						<td>time</td>
+						<td>hh:mm</td>
+					</tr>
+					<tr>
+						<td>week</td>
+						<td>yyyy-Wnn</td>
+					</tr>
+				</table>
+				<figcaption><b>Fig. 3.5</b> Self-validating input types.</figcaption>
+			</figure>
+		</section>
+	
+	</main>
+</body>
+</html>
+
