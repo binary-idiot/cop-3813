@@ -1,0 +1,22 @@
+table{
+	border-collapse: collapse; 
+	border: 5px solid black;
+}
+caption{padding: 1em; 
+	font-weight: bold; 
+	text-align: center; 
+	font-size: 18pt;
+}
+th{
+	padding: 1em; 
+	text-decoration: underline; 
+	font-weight: normal; border: 1px solid black; 
+	text-align: center; 
+	font-size: 14pt;
+} 
+td{
+	padding: .5em; 
+	border: 1px solid black; 
+	text-align: left; 
+	font-size: 12pt;
+}
