@@ -1,0 +1,43 @@
+body{
+    width: 100%;
+    font-size: 2em;
+}
+
+header{
+    width: 100%;
+    text-align: center;
+    border-bottom: 2px solid grey;
+}
+
+footer{
+    width: 100%;
+    border-top: 2px solid grey;
+    
+}
+
+footer h2{
+    padding: 10px 25px;
+}
+
+main{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+section{
+    width: 400px;
+    padding: 5px;
+}
+
+#section1{
+    order: 1;
+}
+
+#section2{
+    order: 2;
+}
+
+#section3{
+    order: 3;
+}
