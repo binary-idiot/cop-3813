@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exceeded Credit CHeck</title>
+</head>
+<body>
+	<div id="account-message"></div>
+	<div id="balance"></div>
+	<br>	
+	<button onclick="checkCredit()">Check Credit</button>
+
+	<script>
+		function checkCredit() {
+			const accountNum = parseInt(prompt('What is your account num?'));
+			const balance = parseInt(prompt('What is your starting balance?'));
+			const totalCharged = parseInt(prompt('What is the total charged to your account this month?'));
+			const totalCredited = parseInt(prompt('What is the total credited to your account this month?'));
+			const creditLimit = parseInt(prompt('What is your credit limit?'));
+
+			const newBalance = balance + totalCharged - totalCredited;
+			document.getElementById('balance').innerHTML =`Your balance is: $${newBalance}`;
+
+			const message = document.getElementById('account-message');
+			if(newBalance > creditLimit){
+				message.innerHTML = '<strong>Credit limit exceeded</strong>';
+			}else{
+				message.innerHTML = `Available credit: $${creditLimit - newBalance}`;
+			}
+
+		}
+	</script>
+</body>
+</html>
