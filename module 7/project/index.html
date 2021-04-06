@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Weeks retail value</title>
+</head>
+<body>
+	<div>
+		<h1>Total value</h1>
+
+		<p>
+			$<span id="total">0</span>
+		</p>
+		
+		<button onclick="calcValue()">Input new</button>
+	</div>
+	<script>
+		function calcValue(){
+			let total = 0;
+			let finalTotal = false;
+			let warning = "";
+			const promptStr = "Enter a product num between 1-5 and a quantity in the format 'product,quantity' or '0' to exit";
+
+			do {
+				let input = prompt(`${warning ? `${warning}, ` : ''}${promptStr}`);
+				warning = "";
+
+				const values = input.split(',')
+					.map(v => {
+						const val = parseInt(v);
+						if(val !== NaN){
+							if(val >= 0)
+								return val;
+							else
+							warning = 'Value cannot be negative'
+						}else{
+							warning = 'Entered value is not a number';
+						}
+						return undefined;
+				});
+
+				if(values.some(e => e == undefined))
+					continue;
+
+				let price = 0;
+				switch(values[0]){
+					case 1:
+						price = 2.98;
+						break;
+					case 2:
+						price = 4.50;
+						break;
+					case 3:
+						price = 9.98;
+						break;
+					case 4:
+						price = 4.49;
+						break;
+					case 5:
+						price = 6.87;
+						break;
+					case 0:
+						finalTotal = true;
+						continue;
+					default:
+						warning = 'Invalid product number';
+						continue;
+				}
+
+				if(values[1]){
+					total += price * values[1];
+				}else{
+					warning = 'Missing quantity value';
+				}
+
+			} while (!finalTotal);
+
+			document.getElementById('total').innerHTML = total.toFixed(2);
+		}
+	</script>
+</body>
+</html>
