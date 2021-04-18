@@ -1,0 +1,42 @@
+main{
+    text-align: center;
+
+    margin: 10%;
+    display: grid;
+    column-gap: 5px;
+    row-gap: 20px;
+    grid-template-areas: 
+    'result result result'
+    'label label input'
+    '. button .';
+}
+
+#result{
+    grid-area: result;
+    width: 100%;
+    padding: 5px;
+    border: 3px solid grey;
+    background-color: rgb(255, 96, 96);
+}
+
+#result.start{
+    background-color: inherit;
+}
+
+#result.win{
+    background-color: lightgreen;
+}
+
+label{
+    grid-area: label;
+}
+
+input{
+    width: 50%;
+    grid-area: input;
+    justify-self: right;
+}
+
+button{
+    grid-area: button;
+}
